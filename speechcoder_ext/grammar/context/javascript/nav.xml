@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context>
+	<concept>
+		<name>backspace</name>
+		<action>
+			<name>backspace</name>
+			<repeat><dynamic require="x">%x%</dynamic><dynamic require_not="x">1</dynamic></repeat>
+		</action>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>action</value>
+		</option>
+	</concept>
+	<concept>
+		<name>up</name>
+		<action>
+			<name>up</name>
+			<repeat><dynamic require="x">%x%</dynamic><dynamic require_not="x">1</dynamic></repeat>
+		</action>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>action</value>
+		</option>
+	</concept>
+	<concept>
+		<name>down</name>
+		<action>
+			<name>down</name>
+			<repeat><dynamic require="x">%x%</dynamic><dynamic require_not="x">1</dynamic></repeat>
+		</action>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>action</value>
+		</option>
+	</concept>
+	<concept>
+		<name>left</name>
+		<action>
+			<name>left</name>
+			<repeat><dynamic require="x">%x%</dynamic><dynamic require_not="x">1</dynamic></repeat>
+		</action>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>action</value>
+		</option>
+	</concept>
+	<concept>
+		<name>right</name>
+		<action>
+			<name>right</name>
+			<repeat><dynamic require="x">%x%</dynamic><dynamic require_not="x">1</dynamic></repeat>
+		</action>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>action</value>
+		</option>
+	</concept>
+	<concept>
+		<name>doc_top</name>
+		<action>
+			<name>doc_top</name>
+			<repeat><static>1</static></repeat>
+		</action>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>action</value>
+		</option>
+	</concept>
+	<concept>
+		<name>doc_bot</name>
+		<action>
+			<name>doc_bot</name>
+			<repeat><static>1</static></repeat>
+		</action>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>action</value>
+		</option>
+	</concept>
+	<concept>
+		<name>line_start</name>
+		<action>
+			<name>line_start</name>
+			<repeat><static>1</static></repeat>
+		</action>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>action</value>
+		</option>
+	</concept>
+	<concept>
+		<name>line_end</name>
+		<action>
+			<name>line_end</name>
+			<repeat><static>1</static></repeat>
+		</action>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>action</value>
+		</option>
+	</concept>
+	<!--
+	<concept>
+		<name>container_nav</name>
+		<output>
+			<dynamic require="left">:left </dynamic>
+			<dynamic require="right">:right </dynamic>
+			<dynamic require="paren">:paren </dynamic>
+			<dynamic require="square">:square </dynamic>
+			<dynamic require="bracket">:curly </dynamic>
+			<dynamic require="curly">:curly </dynamic>
+			<dynamic require="angle">:angle </dynamic>
+			<dynamic require_not="0,1,2,3">0</dynamic>
+			<dynamic require="0">0</dynamic>
+			<dynamic require="1">1</dynamic>
+			<dynamic require="2">2</dynamic>
+			<dynamic require="3">3</dynamic>
+		</output>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>container_navigation</value>
+		</option>
+	</concept>
+	-->
+	<concept>
+		<name>paren_left</name>
+		<output>
+			<dynamic require="rep">:rp%rep% </dynamic>
+			<dynamic require="0">0</dynamic>
+			<dynamic require="1">1</dynamic>
+			<dynamic require="2">2</dynamic>
+			<dynamic require="3">3</dynamic>
+		</output>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>subtype</name>
+			<value>paren</value>
+		</option>
+		<option>
+			<name>direction</name>
+			<value>0</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>container_navigation_short</value>
+		</option>
+	</concept>
+	<concept>
+		<name>paren_right</name>
+		<output>
+			<dynamic require="rep">:rp%rep% </dynamic>
+			<dynamic require="0">0</dynamic>
+			<dynamic require="1">1</dynamic>
+			<dynamic require="2">2</dynamic>
+			<dynamic require="3">3</dynamic>
+		</output>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>subtype</name>
+			<value>paren</value>
+		</option>
+		<option>
+			<name>direction</name>
+			<value>1</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>container_navigation_short</value>
+		</option>
+	</concept>
+
+	<concept>
+		<name>square_left</name>
+		<output>
+			<dynamic require="rep">:rp%rep% </dynamic>
+			<dynamic require="0">0</dynamic>
+			<dynamic require="1">1</dynamic>
+			<dynamic require="2">2</dynamic>
+			<dynamic require="3">3</dynamic>
+		</output>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>subtype</name>
+			<value>square</value>
+		</option>
+		<option>
+			<name>direction</name>
+			<value>0</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>container_navigation_short</value>
+		</option>
+	</concept>
+	<concept>
+		<name>square_right</name>
+		<output>
+			<dynamic require="rep">:rp%rep% </dynamic>
+			<dynamic require="0">0</dynamic>
+			<dynamic require="1">1</dynamic>
+			<dynamic require="2">2</dynamic>
+			<dynamic require="3">3</dynamic>
+		</output>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>subtype</name>
+			<value>square</value>
+		</option>
+		<option>
+			<name>direction</name>
+			<value>1</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>container_navigation_short</value>
+		</option>
+	</concept>
+	<concept>
+		<name>brace_left</name>
+		<output>
+			<dynamic require="rep">:rp%rep% </dynamic>
+			<dynamic require="0">0</dynamic>
+			<dynamic require="1">1</dynamic>
+			<dynamic require="2">2</dynamic>
+			<dynamic require="3">3</dynamic>
+		</output>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>subtype</name>
+			<value>square</value>
+		</option>
+		<option>
+			<name>direction</name>
+			<value>0</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>container_navigation_short</value>
+		</option>
+	</concept>
+	<concept>
+		<name>brace_right</name>
+		<output>
+			<dynamic require="rep">:rp%rep% </dynamic>
+			<dynamic require="0">0</dynamic>
+			<dynamic require="1">1</dynamic>
+			<dynamic require="2">2</dynamic>
+			<dynamic require="3">3</dynamic>
+		</output>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>subtype</name>
+			<value>square</value>
+		</option>
+		<option>
+			<name>direction</name>
+			<value>1</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>container_navigation_short</value>
+		</option>
+	</concept>
+
+	<concept>
+		<name>curl_left</name>
+		<output>
+			<dynamic require="rep">:rp%rep% </dynamic>
+			<dynamic require="0">0</dynamic>
+			<dynamic require="1">1</dynamic>
+			<dynamic require="2">2</dynamic>
+			<dynamic require="3">3</dynamic>
+		</output>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>subtype</name>
+			<value>curly</value>
+		</option>
+		<option>
+			<name>direction</name>
+			<value>0</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>container_navigation_short</value>
+		</option>
+	</concept>
+	<concept>
+		<name>curl_right</name>
+		<output>
+			<dynamic require="rep">:rp%rep% </dynamic>
+			<dynamic require="0">0</dynamic>
+			<dynamic require="1">1</dynamic>
+			<dynamic require="2">2</dynamic>
+			<dynamic require="3">3</dynamic>
+		</output>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>subtype</name>
+			<value>curly</value>
+		</option>
+		<option>
+			<name>direction</name>
+			<value>1</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>container_navigation_short</value>
+		</option>
+	</concept>
+	<concept>
+		<name>bracket_left</name>
+		<output>
+			<dynamic require="rep">:rp%rep% </dynamic>
+			<dynamic require="0">0</dynamic>
+			<dynamic require="1">1</dynamic>
+			<dynamic require="2">2</dynamic>
+			<dynamic require="3">3</dynamic>
+		</output>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>subtype</name>
+			<value>curly</value>
+		</option>
+		<option>
+			<name>direction</name>
+			<value>0</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>container_navigation_short</value>
+		</option>
+	</concept>
+	<concept>
+		<name>bracket_right</name>
+		<output>
+			<dynamic require="rep">:rp%rep% </dynamic>
+			<dynamic require="0">0</dynamic>
+			<dynamic require="1">1</dynamic>
+			<dynamic require="2">2</dynamic>
+			<dynamic require="3">3</dynamic>
+		</output>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>subtype</name>
+			<value>curly</value>
+		</option>
+		<option>
+			<name>direction</name>
+			<value>1</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>container_navigation_short</value>
+		</option>
+	</concept>
+
+	<concept>
+		<name>angle_left</name>
+		<output>
+			<dynamic require="rep">:rp%rep% </dynamic>
+			<dynamic require="0">0</dynamic>
+			<dynamic require="1">1</dynamic>
+			<dynamic require="2">2</dynamic>
+			<dynamic require="3">3</dynamic>
+		</output>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>subtype</name>
+			<value>angle</value>
+		</option>
+		<option>
+			<name>direction</name>
+			<value>0</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>container_navigation_short</value>
+		</option>
+	</concept>
+	<concept>
+		<name>angle_right</name>
+		<output>
+			<dynamic require="rep">:rp%rep% </dynamic>
+			<dynamic require="0">0</dynamic>
+			<dynamic require="1">1</dynamic>
+			<dynamic require="2">2</dynamic>
+			<dynamic require="3">3</dynamic>
+		</output>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>subtype</name>
+			<value>angle</value>
+		</option>
+		<option>
+			<name>direction</name>
+			<value>1</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>container_navigation_short</value>
+		</option>
+	</concept>
+	<concept>
+		<name>add_snippet</name>
+		<output><dynamic require="name">%name%</dynamic><static>~~~</static><dynamic require="context_name">%context_name%</dynamic></output>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>add_snippet</value>
+		</option>
+	</concept>
+	<concept>
+		<name>inject_snippet</name>
+		<output><dynamic require="name">%name%</dynamic><static>~~~</static><dynamic require="context_name">%context_name%</dynamic></output>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>inject_snippet</value>
+		</option>
+	</concept>
+	<concept>
+		<name>display_snippets</name>
+		<output><dynamic require="context_name">%context_name%</dynamic></output>
+		<option>
+			<name>indent</name>
+			<value>inherit</value>
+		</option>
+		<option>
+			<name>type</name>
+			<value>display_snippets</value>
+		</option>
+	</concept>
+</context>
